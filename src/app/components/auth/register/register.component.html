@@ -1,0 +1,134 @@
+<div class="home">
+  <div class="register-form">
+    <h1>REGISTRACIJA</h1>
+    <div class="form-holder">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Ime</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="firstName"
+              [formControl]="firstNameFormControl"
+            />
+            <mat-error *ngIf="firstNameFormControl.hasError('minlength')">
+              Ime može da sadrži najmanje <strong>3</strong> karaktera
+            </mat-error>
+            <mat-error *ngIf="firstNameFormControl.hasError('required')">
+              Ime je <strong>obavezan</strong> unos
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Prezime</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="lastName"
+              [formControl]="lastNameFormControl"
+            />
+            <mat-error *ngIf="lastNameFormControl.hasError('minlength')">
+              Prezime može da sadrži najmanje <strong>3</strong> karaktera
+            </mat-error>
+            <mat-error *ngIf="lastNameFormControl.hasError('required')">
+              Prezime je <strong>obavezan</strong> unos
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="username"
+              [formControl]="usernameFormControl"
+            />
+            <mat-error *ngIf="usernameFormControl.hasError('maxlength')">
+              Username može da sadrži najviše <strong>15</strong> karaktera
+            </mat-error>
+            <mat-error *ngIf="usernameFormControl.hasError('minlength')">
+              Username može da sadrži najmanje <strong>3</strong> karaktera
+            </mat-error>
+            <mat-error *ngIf="usernameFormControl.hasError('required')">
+              Username je <strong>obavezan</strong> unos
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              [formControl]="emailFormControl"
+              placeholder="primer@primer.com"
+            />
+            <mat-error *ngIf="emailFormControl.hasError('email')">
+              Email koji ste uneli nije validan
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email je <strong>obavezan</strong> unos
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+              [formControl]="passwordFormControl"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+              Password može da sadrži najmanje <strong>6</strong> karaktera
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Password je <strong>obavezan</strong> unos
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <button
+            class="submit-btn"
+            mat-raised-button
+            type="submit"
+            [disabled]="!userForm.valid"
+          >
+            Registruj se
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="success" class="message">
+  <div class="message-content success">
+    <p>✔ {{ message }}</p>
+  </div>
+</div>
+
+<div id="error" class="message">
+  <div class="message-content error">
+    <p>❌ {{ message }}</p>
+  </div>
+</div>

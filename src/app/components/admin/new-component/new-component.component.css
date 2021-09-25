@@ -1,0 +1,87 @@
+.home {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  font-size: 16px;
+}
+.new-component {
+  width: 60%;
+  margin: auto;
+}
+.form-field-holder {
+  margin: 15px 5px;
+}
+
+/* MULTIPLE FIELDS */
+mat-form-field {
+  width: 100%;
+}
+.flex-form {
+  display: flex;
+}
+.flex-form mat-form-field {
+  margin-right: 8px;
+}
+
+/* BUTTONS */
+.add-btn {
+  background-color: #b70215;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.remove-btn {
+  color: #b70215;
+}
+.submit-btn {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  background-color: #b70215;
+  color: #fff;
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  background-color: #b70215;
+  color: #fff;
+}
+
+/* OTHER */
+.more-fields-holder {
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 5px 0;
+}
+.field-title {
+  color: #808080;
+  padding-bottom: 5px;
+}
+.form-text {
+  color: #808080;
+  padding: 5px;
+}
+.fix-position {
+  padding: 20px 10px 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .new-component {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .flex-form {
+    flex-wrap: wrap;
+  }
+  .fix-position {
+    padding: 0 10px 10px;
+  }
+}

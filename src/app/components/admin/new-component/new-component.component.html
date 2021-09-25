@@ -1,0 +1,338 @@
+<div class="home" *ngIf="currentUser.username; else loggedOut">
+  <div class="new-component">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>Naziv proizvoda</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="productName"
+            [formControl]="productNameControl"
+          />
+          <mat-error *ngIf="productNameControl.hasError('minlength')">
+            Naziv proizvoda može da sadrži najmanje <strong>3</strong> karaktera
+          </mat-error>
+          <mat-error *ngIf="productNameControl.hasError('required')">
+            Naziv proizvoda je <strong>obavezan</strong> unos
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>Šifra proizvoda</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="productCode"
+            [formControl]="productCodeControl"
+          />
+          <mat-error *ngIf="productCodeControl.hasError('required')">
+            Šifra proizvoda je <strong>obavezan</strong> unos
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>Marka proizvoda</mat-label>
+          <mat-select (selectionChange)="selectClass($event)" required>
+            <mat-option>--</mat-option>
+            <mat-option
+              *ngFor="let class of productClasses"
+              [value]="toStr(class)"
+            >
+              {{ class.title }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="form-field-holder">
+        <button
+          mat-raised-button
+          type="button"
+          class="add-btn"
+          (click)="addTag()"
+        >
+          <mat-icon>add</mat-icon> Dodaj tag
+        </button>
+        <div
+          formArrayName="tags"
+          *ngFor="let tag of tags.controls; let i = index"
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>#tag </mat-label>
+            <input matInput type="text" [formControlName]="i" />
+            <button
+              class="remove-btn"
+              mat-icon-button
+              matSuffix
+              (click)="removeTag(i)"
+            >
+              <mat-icon>clear</mat-icon>
+            </button>
+            <mat-error *ngIf="tag.hasError('required')">
+              Tag je <strong>obavezan</strong> unos
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="form-field-holder">
+        <button
+          mat-raised-button
+          type="button"
+          class="add-btn"
+          (click)="addForeignNames()"
+        >
+          <mat-icon>add</mat-icon> Dodaj strani nazivi
+        </button>
+        <div
+          class="more-fields-holder"
+          formArrayName="foreignNames"
+          *ngFor="let data of foreignNames.controls; let i = index"
+        >
+          <button
+            class="remove-btn"
+            mat-icon-button
+            (click)="removeForeignNames(i)"
+          >
+            <mat-icon>clear</mat-icon>
+            <span class="field-title">{{ i + 1 }}. Strani naziv</span>
+          </button>
+          <div [formGroupName]="i">
+            <div class="flex-form">
+              <mat-form-field appearance="outline">
+                <mat-label>Sifra zemlje </mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="countryCode"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Naziv proizvoda </mat-label>
+                <input matInput type="text" formControlName="name" required />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="form-field-holder">
+        <section class="form-text">
+          <mat-checkbox
+            color="warn"
+            labelPosition="before"
+            formControlName="active"
+            (change)="isActive($event)"
+          >
+            Da li je proizvod u prodaji?
+          </mat-checkbox>
+        </section>
+      </div>
+
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>Jedinica </mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="unit"
+            [formControl]="unitControl"
+          />
+          <mat-error *ngIf="unitControl.hasError('required')">
+            Jedinica je <strong>obavezan</strong> unos
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>eAN šifra </mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="eANCode"
+            [formControl]="eANCodeControl"
+          />
+          <mat-error *ngIf="eANCodeControl.hasError('required')">
+            eAN šifra je <strong>obavezan</strong> unos
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>eAN šifra paketa </mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="eANPackageCode"
+            [formControl]="eANPackageCodeControl"
+          />
+          <mat-error *ngIf="eANPackageCodeControl.hasError('required')">
+            eAN šifra paketa je <strong>obavezan</strong> unos
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="form-field-holder">
+        <button
+          mat-raised-button
+          type="button"
+          class="add-btn"
+          (click)="addLogisticData()"
+        >
+          <mat-icon>add</mat-icon> Dodaj logistički podatak
+        </button>
+        <div
+          class="more-fields-holder"
+          formArrayName="logisticData"
+          *ngFor="let data of logisticData.controls; let i = index"
+        >
+          <button
+            class="remove-btn"
+            mat-icon-button
+            (click)="removeLogisticData(i)"
+          >
+            <mat-icon>clear</mat-icon>
+            <span class="field-title">{{ i + 1 }}. Logistički podatak</span>
+          </button>
+          <div [formGroupName]="i">
+            <div class="flex-form">
+              <mat-form-field appearance="outline">
+                <mat-label>key </mat-label>
+                <input matInput type="text" formControlName="key" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>prompt </mat-label>
+                <input matInput type="text" formControlName="prompt" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>value </mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="value"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="form-field-holder">
+        <button
+          mat-raised-button
+          type="button"
+          class="add-btn"
+          (click)="addCustomAttributes()"
+        >
+          <mat-icon>add</mat-icon> Dodaj dodatni atribut
+        </button>
+        <div
+          class="more-fields-holder"
+          formArrayName="customAttributes"
+          *ngFor="let data of customAttributes.controls; let i = index"
+        >
+          <button
+            class="remove-btn"
+            mat-icon-button
+            (click)="removeCustomAttributes(i)"
+          >
+            <mat-icon>clear</mat-icon>
+            <span class="field-title">{{ i + 1 }}. Dodatni atribut</span>
+          </button>
+          <div [formGroupName]="i">
+            <div class="flex-form">
+              <mat-form-field appearance="outline">
+                <mat-label>key </mat-label>
+                <input matInput type="text" formControlName="key" required />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>prompt </mat-label>
+                <input matInput type="text" formControlName="prompt" required />
+              </mat-form-field>
+              <div class="fix-position">
+                <mat-checkbox
+                  class="form-text"
+                  color="warn"
+                  labelPosition="before"
+                  type="checkbox"
+                  formControlName="value"
+                >
+                  value
+                </mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="form-field-holder">
+        <div formGroupName="thumbnail">
+          <mat-form-field appearance="outline">
+            <mat-label>URL slike</mat-label>
+            <input matInput type="text" formControlName="imageName" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-field-holder">
+        <mat-form-field appearance="outline">
+          <mat-label>Opis proizvoda </mat-label>
+          <textarea
+            matInput
+            formControlName="description"
+            cols="40"
+            rows="5"
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <button
+        mat-button
+        class="submit-btn"
+        type="submit"
+        [disabled]="!productForm.valid"
+      >
+        Dodaj proizvod
+      </button>
+    </form>
+  </div>
+</div>
+
+<div id="success" class="message">
+  <div class="message-content success">
+    <p>✔ {{ message }}</p>
+  </div>
+</div>
+
+<div id="error" class="message">
+  <div class="message-content error">
+    <p>❌ {{ message }}</p>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <div class="no-admin">
+    <h1>Prijavite se da bi ste pristupili ovoj stranici.</h1>
+  </div>
+</ng-template>

@@ -1,0 +1,47 @@
+.menu {
+  width: 100%;
+  height: 60px;
+  background-color: #b70215;
+  position: fixed;
+  z-index: 1;
+}
+.logo {
+  width: 90px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #b70215;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+}
+li span {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #fafafa;
+  color: #b70215;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-icon {
+  color: #fff;
+}

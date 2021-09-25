@@ -1,0 +1,92 @@
+.home {
+  padding-top: 80px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 95%;
+  margin: 20px auto;
+}
+
+.product {
+  max-width: 250px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 11px rgb(0, 0, 0, 0.4);
+}
+
+.product-header {
+  background-color: #b70214;
+  margin: -16px -16px 0 !important;
+  color: #fff;
+  padding: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.product-sub {
+  color: #ffffffd8;
+}
+
+.product-footer {
+  padding: 5px;
+}
+
+.product-tags {
+  word-wrap: break-word;
+}
+
+.product-tag {
+  font-size: 18px;
+  color: #d67900;
+}
+
+.product-likes {
+  font-size: 18px;
+  font-variant: small-caps;
+  font-weight: 700;
+  color: #b70215;
+}
+
+/* INPUT FILTER */
+.search-box {
+  width: 95%;
+  height: auto;
+  margin: auto;
+}
+mat-form-field {
+  width: 100%;
+}
+mat-label {
+  font-size: 18px;
+}
+
+/* CHECKBOX FILTER */
+mat-expansion-panel {
+  width: 95%;
+  margin: auto;
+}
+mat-panel-title {
+  font-size: 18px;
+  color: #b70215;
+}
+.checkbox-holder {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid #b70215;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #b70215;
+  cursor: pointer;
+}
+.checkbox {
+  display: none;
+}

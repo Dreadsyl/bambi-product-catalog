@@ -1,0 +1,60 @@
+<div class="home" *ngIf="currentUser.username; else loggedOut">
+  <div>
+    <h1 class="title">Kreiranje marke</h1>
+    <div class="form-holder">
+      <form
+        [formGroup]="productClass"
+        (ngSubmit)="addNewClass()"
+        class="search-box"
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>Marka</mat-label>
+          <input matInput type="text" formControlName="title"
+        /></mat-form-field>
+        <button
+          class="submit-btn"
+          mat-raised-button
+          type="submit"
+          [disabled]="!productClass.valid"
+        >
+          Dodaj marku
+        </button>
+      </form>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+      <h2 class="subtitle">Lista kreiranih marki</h2>
+      <div class="class-holder">
+        <div
+          class="product-class"
+          *ngFor="let class of productClasses; let i = index"
+        >
+          {{ class.title }}
+          <button mat-icon-button type="button" (click)="deleteClass(class.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="success" class="message">
+  <div class="message-content success">
+    <p>✔ {{ message }}</p>
+  </div>
+</div>
+
+<div id="error" class="message">
+  <div class="message-content error">
+    <p>❌ {{ message }}</p>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <div class="no-admin">
+    <h1>Prijavite se da bi ste pristupili ovoj stranici.</h1>
+  </div>
+</ng-template>

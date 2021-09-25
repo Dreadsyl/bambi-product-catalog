@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="details" *ngIf="product">
+    <div class="details-photo">
+      <img
+        class="details-thumbnail"
+        src="{{
+          product.thumbnail.imageName ? product.thumbnail.imageName : noImage
+        }}"
+        alt="{{ product.productName }}"
+      />
+    </div>
+
+    <div class="details-info">
+      <div class="details-info-header">
+        <h1>{{ product.productName }}</h1>
+        <h2>
+          {{
+            product.productClass.title
+              ? product.productClass.title
+              : noProductClass
+          }}
+        </h2>
+        <div class="tags">
+          <span class="tag" *ngFor="let tag of product.tags">#{{ tag }}</span>
+        </div>
+      </div>
+
+      <div class="details-info-content">
+        <div *ngIf="product.description" class="description">
+          {{ product.description }}
+        </div>
+        <div *ngIf="product.active" class="section">
+          <mat-icon>chevron_right</mat-icon> Proizvod je u prodaji.
+        </div>
+        <div *ngIf="!product.active" class="section">
+          <mat-icon>chevron_right</mat-icon> Proizvod trenutno nije u prodaji.
+        </div>
+        <div class="section">
+          <mat-icon>chevron_right</mat-icon>
+          <strong>{{ product.likes }}</strong>
+          {{ product.likes % 10 === 1 ? "korisnik" : "korisnika" }}
+          je označilo da im se ovaj proizvod sviđa.
+        </div>
+      </div>
+
+      <div class="details-info-action" *ngIf="currentUser.username">
+        <button id="like-btn" [hidden]="isLiked" (click)="like()">LIKE</button>
+        <button id="unlike-btn" [hidden]="!isLiked" (click)="unlike()">
+          UNLIKE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

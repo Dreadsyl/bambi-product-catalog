@@ -1,0 +1,60 @@
+<div class="home">
+  <div class="login" *ngIf="!currentUser.username">
+    <h1>PRIJAVI SE</h1>
+    <div class="form-holder">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username" />
+          </mat-form-field>
+        </div>
+
+        <div class="form-field-holder">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="btn-holder">
+          <button
+            class="submit-btn"
+            mat-raised-button
+            type="submit"
+            [disabled]="!loginForm.valid"
+          >
+            Prijavi se
+          </button>
+          <a type="button" routerLink="/register">Registruj se</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="success" class="message">
+  <div class="message-content success">
+    <p>{{ message }}</p>
+  </div>
+</div>
+
+<div id="error" class="message">
+  <div class="message-content error">
+    <p>❌ {{ message }}</p>
+  </div>
+</div>

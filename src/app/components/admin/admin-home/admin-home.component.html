@@ -1,0 +1,52 @@
+<div class="home" *ngIf="currentUser.username; else loggedOut">
+  <div class="tools">
+    <div class="menu">
+      <button
+        class="add-btn"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Creating components menu"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="new-product">
+          <span class="menu-items">Kreiraj proizvod</span>
+        </button>
+        <button mat-menu-item routerLink="product-class">
+          <span class="menu-items">Kreiraj marku</span>
+        </button>
+      </mat-menu>
+    </div>
+
+    <div class="search-box">
+      <mat-form-field appearance="outline">
+        <mat-label><mat-icon>search</mat-icon> Pretraga...</mat-label>
+        <input matInput type="text" [(ngModel)]="searchProduct" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="products">
+    <div
+      class="product"
+      *ngFor="let product of products | filter: searchProduct"
+      routerLink="update/{{ product.id }}"
+    >
+      <img
+        class="product-image"
+        src="{{
+          product.thumbnail.imageName ? product.thumbnail.imageName : noImage
+        }}"
+        alt="{{ product.productName }}"
+      />
+      <div class="product-text">{{ product.productName }}</div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <div class="no-admin">
+    <h1>Prijavite se da bi ste pristupili ovoj stranici.</h1>
+  </div>
+</ng-template>

@@ -1,0 +1,38 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/" (click)="onSidenavClose()" class="side-link">
+    <span>Home</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="admin"
+    (click)="onSidenavClose()"
+    *ngIf="showAdmin"
+    class="side-link"
+  >
+    <span>Admin</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="register"
+    (click)="onSidenavClose()"
+    *ngIf="!isLoggedIn"
+    class="side-link"
+  >
+    <span>Register</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="login"
+    (click)="onSidenavClose()"
+    *ngIf="!isLoggedIn"
+    class="side-link"
+  >
+    <span>Login</span>
+  </a>
+  <a mat-list-item (click)="onSidenavClose()" *ngIf="isLoggedIn" class="user">
+    <span>User: {{ username }}</span>
+  </a>
+  <a mat-list-item (click)="logout()" *ngIf="isLoggedIn" class="side-link">
+    <span>Logout</span>
+  </a>
+</mat-nav-list>

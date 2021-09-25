@@ -1,0 +1,442 @@
+{
+  "products": [
+    {
+      "id": "a002b7da-594d-49f2-9527-a908937ab21e",
+      "productName": "PLAZMA KEKS 300 G",
+      "productCode": "1042150",
+      "tags": [
+        "keks",
+        "plazma",
+        "uživancija"
+      ],
+      "foreignNames": [
+        {
+          "countryCode": "en",
+          "name": "PLAZMA BISCUITS 300 G"
+        },
+        {
+          "countryCode": "rus",
+          "name": "ПЛАЗМА ПЕЧЕНЬЕ 300 Г"
+        }
+      ],
+      "productClass": {
+        "id": "001",
+        "title": "PLAZMA"
+      },
+      "active": true,
+      "thumbnail": {
+        "id": "",
+        "imageName": "https://cenoteka.rs/assets/images/articles/keks-bambi-plazma-150g-1004785-large.jpg"
+      },
+      "images": [
+        {
+          "id": "",
+          "imageName": ""
+        }
+      ],
+      "unit": "KOM",
+      "eANCode": "8600043000023",
+      "eANPackageCode": "8600043000023",
+      "logisticData": [
+        {
+          "key": "netWeight",
+          "prompt": "Neto masa",
+          "value": 0.3
+        },
+        {
+          "key": "piecesInTransportation",
+          "prompt": "Komada u transportnom pakovanju",
+          "value": 24
+        }
+      ],
+      "customAttributes": [
+        {
+          "key": "euMarket",
+          "prompt": "Prodaja na EU tržištu",
+          "value": true
+        }
+      ],
+      "likes": 123,
+      "description": "PLazma keks opis ...... test 1"
+    },
+    {
+      "id": "b002b7da-594d-49f2-9527-a908937ab21e",
+      "productCode": "2042150",
+      "productName": "ZLATNI PEK 750 G",
+      "foreignNames": [
+        {
+          "countryCode": "en",
+          "name": "GOLDEN PEK 300 G"
+        }
+      ],
+      "productClass": {
+        "id": "002",
+        "title": "ZLATNI PEK"
+      },
+      "active": true,
+      "thumbnail": {
+        "id": "84581287-7802-44d1-afd4-cc4351756a26",
+        "imageName": "https://cenoteka.rs/assets/images/articles/keks-bambi-zlatni-pek-750g-1004799-large.jpg"
+      },
+      "images": [
+        {
+          "id": "123",
+          "imageName": "https://cenoteka.rs/assets/images/articles/keks-bambi-plazma-300g-1004786-large.jpg"
+        },
+        {
+          "id": "124",
+          "imageName": "https://cenoteka.rs/assets/images/articles/keks-bambi-plazma-300g-1004786-large.jpg"
+        }
+      ],
+      "unit": "KOM",
+      "eANCode": "8600043000023",
+      "eANPackageCode": "8600043000023",
+      "logisticData": [
+        {
+          "key": "netWeight",
+          "prompt": "Neto masa",
+          "value": 0.3
+        },
+        {
+          "key": "piecesInTransportation",
+          "prompt": "Komada u transportnom pakovanju",
+          "value": 24
+        }
+      ],
+      "tags": [
+        "keks",
+        "uživancija"
+      ],
+      "customAttributes": [
+        {
+          "key": "euMarket",
+          "prompt": "Prodaja na EU tržištu",
+          "value": true
+        }
+      ],
+      "likes": 2131,
+      "description": ""
+    },
+    {
+      "id": "C002b7da-594d-49f2-9527-a908937ab21e",
+      "productCode": "3042150",
+      "productName": "WELLNESS SUVO GR 100 G",
+      "foreignNames": [
+        {
+          "countryCode": "en",
+          "name": "PLAZMA BISCUITS 300 G"
+        },
+        {
+          "countryCode": "rus",
+          "name": "ПЛАЗМА ПЕЧЕНЬЕ 300 Г"
+        }
+      ],
+      "productClass": {
+        "id": "005",
+        "title": "WELLNESS"
+      },
+      "active": true,
+      "thumbnail": {
+        "id": "84581287-7802-44d1-afd4-cc4351756a26",
+        "imageName": "https://cenoteka.rs/assets/images/articles/keks-wellness-suvo-grozde-210g-1004775-large.jpg"
+      },
+      "images": [
+        {
+          "id": "123",
+          "imageName": "https://cenoteka.rs/assets/images/articles/keks-bambi-plazma-300g-1004786-large.jpg"
+        }
+      ],
+      "unit": "KOM",
+      "eANCode": "8600043000023",
+      "eANPackageCode": "8600043000023",
+      "logisticData": [
+        {
+          "key": "netWeight",
+          "prompt": "Neto masa",
+          "value": 0.3
+        },
+        {
+          "key": "piecesInTransportation",
+          "prompt": "Komada u transportnom pakovanju",
+          "value": 24
+        }
+      ],
+      "tags": [
+        "keks",
+        "uživancija"
+      ],
+      "customAttributes": [
+        {
+          "key": "euMarket",
+          "prompt": "Prodaja na EU tržištu",
+          "value": true
+        }
+      ],
+      "likes": 102,
+      "description": ""
+    },
+    {
+      "id": "b51d5803-0a98-4676-a82e-ee33ef4049a9",
+      "productName": "test",
+      "productCode": "12345",
+      "tags": [
+        "test"
+      ],
+      "foreignNames": [
+        {
+          "countryCode": "fdf",
+          "name": "dfdf"
+        }
+      ],
+      "productClass": {
+        "id": "001",
+        "title": "PLAZMA"
+      },
+      "active": false,
+      "thumbnail": {
+        "id": "5a45d607-ed39-49a9-a188-e7a91dac87f1",
+        "imageName": ""
+      },
+      "images": [
+        {
+          "id": "",
+          "imageName": ""
+        }
+      ],
+      "unit": "fdfd",
+      "eANCode": "fdfdf",
+      "eANPackageCode": "fdfdf",
+      "logisticData": [
+        {
+          "key": "fddf",
+          "prompt": "fdfd",
+          "value": 1
+        }
+      ],
+      "customAttributes": [
+        {
+          "key": "fdf",
+          "prompt": "fdfd",
+          "value": true
+        }
+      ],
+      "likes": 1,
+      "description": ""
+    }
+  ],
+  "productClass": [
+    {
+      "id": "001",
+      "title": "PLAZMA"
+    },
+    {
+      "id": "002",
+      "title": "ZLATNI PEK"
+    },
+    {
+      "id": "003",
+      "title": "JOŠ"
+    },
+    {
+      "id": "004",
+      "title": "YO DORO"
+    },
+    {
+      "id": "005",
+      "title": "WELLNESS"
+    },
+    {
+      "id": "006",
+      "title": "LANE BISCUITS"
+    },
+    {
+      "id": "007",
+      "title": "NOTTE"
+    },
+    {
+      "id": "008",
+      "title": "MLEČNA ČOKOLADA"
+    },
+    {
+      "id": "009",
+      "title": "JUHU"
+    },
+    {
+      "id": "010",
+      "title": "CRNA ČOKOLADA"
+    },
+    {
+      "id": "011",
+      "title": "MLEČNI KEKS"
+    },
+    {
+      "id": "012",
+      "title": "KOLO"
+    },
+    {
+      "id": "013",
+      "title": "KARAMELICE"
+    },
+    {
+      "id": "014",
+      "title": "ČARI"
+    },
+    {
+      "id": "015",
+      "title": "SCARLET"
+    },
+    {
+      "id": "016",
+      "title": "POSLASTINA"
+    },
+    {
+      "id": "017",
+      "title": "YOYO"
+    },
+    {
+      "id": "018",
+      "title": "KREM BANANA"
+    },
+    {
+      "id": "019",
+      "title": "BONI FAZONI"
+    },
+    {
+      "id": "020",
+      "title": "BELA ČOKOLADA"
+    },
+    {
+      "id": "021",
+      "title": "MALA ČOKOLADNA UŽIVANJA"
+    },
+    {
+      "id": "022",
+      "title": "CHARGER"
+    },
+    {
+      "id": "023",
+      "title": "BAMBI NAPOLITANKE"
+    },
+    {
+      "id": "024",
+      "title": "BAMBI NG PAKET"
+    },
+    {
+      "id": "025",
+      "title": "ROBNA MARKA"
+    },
+    {
+      "id": "026",
+      "title": "BAMBI KUTIJA OSMEHA"
+    },
+    {
+      "id": "027",
+      "title": "WELLBE"
+    },
+    {
+      "id": "028",
+      "title": "BAMBI TEA BISCUIT"
+    },
+    {
+      "id": "029",
+      "title": "INTERCOMPANY SKU"
+    },
+    {
+      "id": "099",
+      "title": "JUHU ALBUM"
+    },
+    {
+      "id": "100",
+      "title": "OSTALO"
+    },
+    {
+      "id": "101",
+      "title": "F-KEKS SA TRŽIŠTA"
+    },
+    {
+      "id": "102",
+      "title": "F-KEKS IZ PROIZVODNJE"
+    },
+    {
+      "id": "200",
+      "title": "BANINI BREND"
+    },
+    {
+      "id": "ed78de90-1094-4df3-8a58-b9d6dea9b764",
+      "title": "MARKA ZA BRISANJE"
+    }
+  ],
+  "register": [],
+  "login": [
+    {
+      "username": "111",
+      "password": "111111",
+      "id": 1
+    },
+    {
+      "username": "aaa",
+      "password": "aaaaaaa",
+      "id": 2
+    },
+    {
+      "username": "aaa",
+      "password": "aaaaaa",
+      "id": 3
+    },
+    {
+      "username": "aaa",
+      "password": "aaaaaa",
+      "id": 4
+    },
+    {
+      "username": "111",
+      "password": "111111",
+      "id": 5
+    },
+    {
+      "username": "dsadsad",
+      "password": "sdadasd",
+      "id": 6
+    },
+    {
+      "username": "fdsfsd",
+      "password": "dsfsdfsdf",
+      "id": 7
+    },
+    {
+      "username": "sadsad",
+      "password": "sadsadasd",
+      "id": 8
+    },
+    {
+      "username": "sdasdas",
+      "password": "sadsadasdas",
+      "id": 9
+    },
+    {
+      "username": "dsadasd",
+      "password": "sdadsadasd",
+      "id": 10
+    },
+    {
+      "username": "dsadasdas",
+      "password": "dsdsadasda",
+      "id": 11
+    },
+    {
+      "username": "dsadasd",
+      "password": "dsadasdasd",
+      "id": 12
+    },
+    {
+      "username": "dsadasd",
+      "password": "sadsadasd",
+      "id": 13
+    },
+    {
+      "username": "dsadasd",
+      "password": "sadsadsadas",
+      "id": 14
+    }
+  ]
+}

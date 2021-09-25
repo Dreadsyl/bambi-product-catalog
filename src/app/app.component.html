@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <pm-menu (sidenavClose)="sidenav.close()"></pm-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <pm-header (sidenavToggle)="sidenav.toggle()"></pm-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

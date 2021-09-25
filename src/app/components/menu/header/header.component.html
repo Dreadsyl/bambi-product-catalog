@@ -1,0 +1,24 @@
+<mat-toolbar class="menu">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+  </div>
+  <img class="logo" src="{{ logo }}" alt="bambi logo" routerLink="/" />
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul class="admin" fxLayout>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="admin" *ngIf="showAdmin">Admin</a></li>
+    </ul>
+    <ul *ngIf="!isLoggedIn" fxLayout>
+      <li><a routerLink="register">Register</a></li>
+      <li><a routerLink="login">Login</a></li>
+    </ul>
+    <ul *ngIf="isLoggedIn" fxLayout>
+      <li>
+        <span>User: {{ username }}</span>
+      </li>
+      <li><a (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+</mat-toolbar>

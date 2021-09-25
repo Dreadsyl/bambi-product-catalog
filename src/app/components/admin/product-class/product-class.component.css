@@ -1,0 +1,59 @@
+.home {
+  padding-top: 80px;
+}
+
+/* FORM */
+.form-holder {
+  margin: 0 2.5%;
+}
+.title {
+  padding: 5px 15px 0px;
+  color: #b70215;
+  font-weight: 300;
+}
+mat-form-field {
+  width: 50%;
+}
+mat-label {
+  font-size: 18px;
+}
+.submit-btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  background-color: #b70215;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  margin-left: 10px;
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  background-color: #b70215;
+  color: #fff;
+}
+
+/* LIST */
+.subtitle {
+  padding: 15px;
+  color: #b70215;
+  font-weight: 300;
+}
+.class-holder {
+  margin: 0 2.5% 2.5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-class {
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #b70215;
+  color: #fff;
+  border-radius: 30px;
+}
